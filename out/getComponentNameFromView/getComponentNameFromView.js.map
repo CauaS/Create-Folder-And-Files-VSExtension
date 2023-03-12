@@ -1,0 +1,1 @@
+{"version":3,"file":"getComponentNameFromView.js","sourceRoot":"","sources":["../../src/getComponentNameFromView/getComponentNameFromView.ts"],"names":[],"mappings":";;AAAA,mCAAgC;AACjB,KAAK,UAAU,wBAAwB;IAGpD,MAAM,eAAe,GAAG,MAAM,eAAM,CAAC,YAAY,CAAC;QAChD,WAAW,EAAE,eAAe;QAC5B,KAAK,EAAE,gBAAgB;KACxB,CAAC,CAAC;IACH,OAAO,eAAe,CAAC;AACzB,CAAC;AARD,2CAQC"}
