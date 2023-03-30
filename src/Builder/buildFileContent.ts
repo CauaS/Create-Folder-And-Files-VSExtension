@@ -10,32 +10,37 @@ interface IFileContentBuilder {
   forStories(componentName: string): FileContentBuilder;
   build(): string;
 }
+enum TypesForFiles  {
+  ts = "ts",
+  tst = "tst",
+  storie = "storie"
+}
 export class FileContentBuilder implements IFileContentBuilder {
   private componentName: string = "";
   private typeFileToBuild: string = "";
 
   forTypescript(componentName: string): FileContentBuilder {
     this.componentName = componentName;
-    this.typeFileToBuild = "ts";
+    this.typeFileToBuild = TypesForFiles.ts;
     return this;
   }
   forTest(componentName: string): FileContentBuilder {
     this.componentName = componentName;
-    this.typeFileToBuild = "tst";
+    this.typeFileToBuild = TypesForFiles.tst;
     return this;
   }
   forStories(componentName: string): FileContentBuilder {
     this.componentName = componentName;
-    this.typeFileToBuild = "storie";
+    this.typeFileToBuild = TypesForFiles.storie;
     return this;
   }
   build(): string {
-    if (this.typeFileToBuild === "ts") {
-      buildContentForTypescript(this.componentName);
-    }
-    if (this.typeFileToBuild === "ts") {
-      buildContentForTest(this.componentName);
-    }
-    return buildContentForStories(this.componentName);
+    if (this.typeFileToBuild === TypesForFiles.ts) {
+      return buildContentForTypescript(this.componentName);
+    } else if (this.typeFileToBuild === TypesForFiles.tst) {
+      return buildContentForTest(this.componentName);
+    } else {
+      return buildContentForStories(this.componentName);
+    }  
   }
 }
